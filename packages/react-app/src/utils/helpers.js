@@ -35,12 +35,12 @@ export const findPoolByTokens = (pools, fromToken, toToken) => {
   );
 };
 
-export const isOperationPending = (operationState) => 
+export const isOperationPending = (operationState) =>
   operationState.status === "PendingSignature" || operationState.status === "Mining";
 export const isOperationFailed = (operationState) =>
-operationState.status === "Fail" || operationState.status === "Exception";
+  operationState.status === "Fail" || operationState.status === "Exception";
 export const isOperationSucceeded = (operationState) =>
-operationState.status === "Success";
+  operationState.status === "Success";
 
 export const getFailureMessage = (swapApproveState, swapExecuteState) => {
   if (isOperationPending(swapApproveState) || isOperationPending(swapExecuteState)) {
@@ -59,7 +59,7 @@ export const getFailureMessage = (swapApproveState, swapExecuteState) => {
 };
 
 export const getSuccessMessage = (swapApproveState, swapExecuteState) => {
-  if (isOperationPending(swapExecuteState) ||isOperationPending(swapApproveState)) {
+  if (isOperationPending(swapExecuteState) || isOperationPending(swapApproveState)) {
     return undefined;
   }
 
